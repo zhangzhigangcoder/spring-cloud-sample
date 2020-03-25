@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: microservice-consumer-movie-ribbon-with-hystrix
+server:
+  port: 8011
+eureka:
+  client:
+    healthcheck:
+      enabled: true
+    serviceUrl:
+      defaultZone: http://zhang:123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+# hystrix 请求超时时间 默认是1s
+hystrix:
+  command: 
+    default:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 50000000
+            
+ribbon:
+  OkToRetryOnAllOperations: true # 是否对所有请求都进行重试
+  MaxAutoRetries: 2     #重试次数
+  MaxAutoRetriesNextServer: 0   #重试切换实例次数
+  ConnectTimeout: 250
+  ReadTimeout: 300
+  retryableStatusCodes: 503,500 # 这里不配置其实也可以，不配置的时候，仅仅当请求服务实例报错的时候重试，配置了的时候，当请求服务实例出现这里指定的状态，也会重试
+    
+
+ 
