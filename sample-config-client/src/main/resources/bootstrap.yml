@@ -1,0 +1,9 @@
+#该文件配置在config server之前加载
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8080  #config server 地址
+      profile: dev
+      label: config #当configserver的后端存储是git时，默认就是master
+  application:
+    name: local

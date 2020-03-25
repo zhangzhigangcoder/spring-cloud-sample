@@ -1,0 +1,12 @@
+#该文件配置在config server之前加载
+spring:
+  cloud:
+    config:
+      uri: http://zhang:1213@localhost:8080  #config server 地址
+      #username和password的优先级比url中的高
+      username: zhang
+      password: 123
+      profile: dev
+      label: config #当configserver的后端存储是git时，默认就是master
+  application:
+    name: local

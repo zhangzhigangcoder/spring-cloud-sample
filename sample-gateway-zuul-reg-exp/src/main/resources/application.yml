@@ -1,0 +1,11 @@
+server:
+  port: 8013
+spring:
+  application:
+    name: microservice-gateway-zuul-reg-exp
+eureka:
+  client:
+    service-url:
+      defaultZone: http://zhang:123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true

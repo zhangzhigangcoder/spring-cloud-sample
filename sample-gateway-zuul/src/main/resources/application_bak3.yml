@@ -1,0 +1,16 @@
+server:
+  port: 8013
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://zhang:123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+zuul:
+  routes:
+    abc: #此处可以任意指定，不要重复就可以了
+      path: /user-path/**  #指定访问路径  http://localhost:8013/user-path/simple/1
+      service-id: microservice-provider-user  #实际调用的application name

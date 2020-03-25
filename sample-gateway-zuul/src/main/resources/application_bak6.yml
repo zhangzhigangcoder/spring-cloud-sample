@@ -1,0 +1,20 @@
+server:
+  port: 8013
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://zhang:123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+zuul:
+  prefix: /simple
+  #若strip-prefix 为true(默认)，删除前缀   则/simple/microservice-provider-user/simple/1  --->  http://localhost:7900/simple/1
+  #反之保留前缀 /simple/microservice-provider-user/simple/1  --->  http://localhost:7900/simple/simple/1
+  strip-prefix: true 
+  
+logging:
+  level:
+    com.netflix: debug

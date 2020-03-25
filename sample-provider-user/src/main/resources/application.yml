@@ -1,0 +1,40 @@
+server:
+  port: 7900
+spring:
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: h2
+    schema: classpath:schema.sql
+    data: classpath:data.sql
+  application:
+    name: microservice-provider-user  #eureka server中application name
+logging:
+  level:
+    root: INFO
+    org.hibernate: INFO
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
+    com.itmuch: DEBUG
+    
+eureka:
+  client:
+    serviceUrl:
+       defaultZone: http://zhang:123@localhost:8761/eureka
+       # Eureka server 高可用配置
+       #defaultZone: http://zhang:123@peer1:8761/eureka,http://zhang:123@peer2:8761/eureka,http://zhang:123@peer3:8761/eureka
+      
+  instance:
+    prefer-ip-address: true #eureka server 控制台访问为ip地址
+    #eureka server 控制台显示名称
+    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}} 
+    metadata-map:
+      zone: ABC      # eureka可以理解的元数据
+      lilizhou: BBC  # 不会影响客户端行为
+    # 注意 lease-expiration-duration-in-seconds不能配置的比lease-renewal-interval-in-seconds小，否则会出问题，一会踢了，一会出来了
+#    lease-renewal-interval-in-seconds: 5 #eureka client访问eureka server的心跳间隔，默认30s
+#    lease-expiration-duration-in-seconds: 7 # 服务端在收到最后一次心跳之后等待的时间上限，超过则剔除,默认90s
+#    appname: xxx 覆盖spring.application.name

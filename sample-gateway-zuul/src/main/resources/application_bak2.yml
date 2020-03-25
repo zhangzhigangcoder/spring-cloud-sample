@@ -1,0 +1,15 @@
+server:
+  port: 8013
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://zhang:123@localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+zuul:
+  ignoredServices: '*' #配置指定服务不用zuul进行代理，"*"表示Eureka Server上所有服务都不进行代理
+  routes:
+    microservice-provider-user: /users/** #microservice-provider-user进行代理，映射路径为/users/**

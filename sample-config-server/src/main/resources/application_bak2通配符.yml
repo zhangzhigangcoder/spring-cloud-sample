@@ -1,0 +1,31 @@
+server:
+  port: 8080
+  
+
+spring:
+  cloud:
+    config:
+      server:
+        svn:
+          # svn没有测试出来
+          # /SpringCloudConfig/config/local/local-dev.yml
+          # /SpringCloudConfig/config/simple/simple-dev.yml
+          uri: http://192.168.23.30:7070/svn/epay-personal/doc/配置/SpringCloudConfig/{application}
+          username: zhangzhigang
+          password: BeK8SzyS3GYC
+        # git默认分支为master,svn默认分支为trunk
+        default-label: config
+  profiles:
+    # 必须配置 默认使用git
+    active: subversion
+    
+#spring:
+#  cloud:
+#    config:
+#      server:
+#         git:
+          # 访问方式：http://localhost:8080/master/simple-default.properties
+          #  or    http://localhost:8080/master/special-default.properties
+          # 好处在于 配置文件和repository 一一对应  具有隔离作用
+#            uri: https://git.oschina.net/it-much/{application}
+        

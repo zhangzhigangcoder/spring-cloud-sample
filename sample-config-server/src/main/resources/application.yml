@@ -1,0 +1,20 @@
+server:
+  port: 8080
+  
+spring:
+  cloud:
+    config:
+      server:
+        svn:
+          #访问：http://localhost:8080/{application}-{profile}.yml
+          #SpringCloudConfig/config/application-dev.yml
+          #SpringCloudConfig/config/application-test.yml
+          #SpringCloudConfig/config/application-pro.yml
+          uri: http://192.168.23.30:7070/svn/epay-personal/doc/配置/SpringCloudConfig
+          username: zhangzhigang
+          password: BeK8SzyS3GYC
+        # git默认分支为master,svn默认分支为trunk
+        default-label: config
+  profiles:
+    # 必须配置 默认使用git
+    active: subversion

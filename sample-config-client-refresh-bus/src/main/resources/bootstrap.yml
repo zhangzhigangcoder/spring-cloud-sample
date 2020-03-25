@@ -1,0 +1,16 @@
+#该文件配置在config server之前加载
+spring:
+  cloud:
+    config:
+      uri: http://localhost:8080  #config server 地址
+      profile: dev
+      label: config 
+  application:
+    name: local
+    
+  #利用rabbitmq实现批量刷新配置功能
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
