@@ -13,7 +13,7 @@ eureka:
     prefer-ip-address: true
 logging:
   level:
-    com.itmuch.cloud.feign.UserFeignClient: DEBUG
+    com.zhangzhigang.cloud.feign.UserFeignClient: DEBUG
 
 
 

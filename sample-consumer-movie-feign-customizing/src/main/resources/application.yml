@@ -13,7 +13,7 @@ eureka:
     prefer-ip-address: true
 logging:
   level:
-    com.itmuch.cloud.feign.UserFeignClient: DEBUG
+    com.zhangzhigang.cloud.feign.UserFeignClient: DEBUG
 
 # 解决第一次请求报超时异常的方案：
 # hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000

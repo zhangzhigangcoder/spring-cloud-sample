@@ -18,7 +18,7 @@ logging:
     org.hibernate: INFO
     org.hibernate.type.descriptor.sql.BasicBinder: TRACE
     org.hibernate.type.descriptor.sql.BasicExtractor: TRACE
-    com.itmuch: DEBUG
+    com.zhangzhigang: DEBUG
     
 eureka:
   client:
@@ -33,7 +33,7 @@ eureka:
     instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}} 
     metadata-map:
       zone: ABC      # eureka可以理解的元数据
-      lilizhou: BBC  # 不会影响客户端行为
+      zhangzhigang: BBC  # 不会影响客户端行为
     # 注意 lease-expiration-duration-in-seconds不能配置的比lease-renewal-interval-in-seconds小，否则会出问题，一会踢了，一会出来了
 #    lease-renewal-interval-in-seconds: 5 #eureka client访问eureka server的心跳间隔，默认30s
 #    lease-expiration-duration-in-seconds: 7 # 服务端在收到最后一次心跳之后等待的时间上限，超过则剔除,默认90s

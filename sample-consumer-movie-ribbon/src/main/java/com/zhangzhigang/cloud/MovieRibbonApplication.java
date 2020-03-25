@@ -9,6 +9,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.web.client.RestTemplate;
 
+import com.zhangzhigang.cloud.config.ExcludeFromComponentScan;
+import com.zhangzhigang.cloud.config.TestConfiguration;
+
 @SpringBootApplication
 @RibbonClient(name = "microservice-provider-user", configuration = TestConfiguration.class)
 // 此处如果不排除在扫描路径之外，该配置会应用到所有的RibbonClient上
