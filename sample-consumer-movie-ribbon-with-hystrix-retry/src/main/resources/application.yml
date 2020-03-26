@@ -19,10 +19,11 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 50000000
+            timeoutInMilliseconds: 5000
             
 ribbon:
-  OkToRetryOnAllOperations: true # 是否对所有请求都进行重试
+  OkToRetryOnAllOperations: true # 是否对所有请求都进行重试(默认false，只能对get请求重试)
+  # 重试次数 = MaxAutoRetries + MaxAutoRetriesNextServer (不算第一次请求)
   MaxAutoRetries: 2     #重试次数
   MaxAutoRetriesNextServer: 0   #重试切换实例次数
   ConnectTimeout: 250

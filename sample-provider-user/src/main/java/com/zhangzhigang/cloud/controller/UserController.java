@@ -33,6 +33,13 @@ public class UserController {
 	  u.setId(id);
     return this.userRepository.findOne(Example.of(u));
   }
+  
+  @PostMapping("/simple/{id}")
+  public User updateById(@PathVariable Long id) {
+	  User u = new User();
+	  u.setId(id);
+    return this.userRepository.findOne(Example.of(u));
+  }
 
   @GetMapping("/eureka-instance")
   public String serviceUrl() {
