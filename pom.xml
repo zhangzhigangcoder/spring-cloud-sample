@@ -15,6 +15,7 @@
 		<module>sample-consumer-movie-feign-customizing</module>
 		<module>sample-consumer-movie-feign-customizing-without-hystrix</module>
 		<module>sample-consumer-movie-ribbon</module>
+		<module>sample-consumer-movie-ribbon-config</module>
 		<module>sample-consumer-movie-ribbon-retry</module>
 		<module>sample-consumer-movie-ribbon-with-hystrix</module>
 		<module>sample-consumer-movie-ribbon-with-hystrix-retry</module>
@@ -24,7 +25,7 @@
 		<module>sample-consumer-movie-ribbon-with-hystrix-factory</module>
 		<module>sample-consumer-movie-ribbon-properties-customizing</module>
 		<module>sample-consumer-movie-ribbon-without-eureka</module>
-		<module>sample-consumer-movie-ribbon-test</module>
+		
 		<module>sample-provider-user</module>
 		<module>sample-discovery-eureka</module>
 		<module>sample-discovery-eureka-ha</module>

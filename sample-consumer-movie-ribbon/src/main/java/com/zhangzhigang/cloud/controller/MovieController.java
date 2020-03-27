@@ -29,10 +29,6 @@ public class MovieController {
   
   @GetMapping("/movie2/{id}")
   public User findById2(@PathVariable Long id) {
-    // http://localhost:7900/simple/
-    // VIP virtual IP
-    // HAProxy Heartbeat
-	// 由于RestTemplate被@LoadBalanced注解配置，所以此处具有负载均衡能力
     return (this.restTemplate).getForObject("http://microservice-provider-user2/simple/" + id, User.class);
   }
 

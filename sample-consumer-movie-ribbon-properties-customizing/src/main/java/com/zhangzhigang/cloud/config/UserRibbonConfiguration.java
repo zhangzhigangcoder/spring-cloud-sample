@@ -1,14 +1,12 @@
 package com.zhangzhigang.cloud.config;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RandomRule;
 
-@Configuration
 @ExcludeFromComponentScan
-public class TestConfiguration {
+public class UserRibbonConfiguration {
   //  @Autowired
   //  IClientConfig config;
 
@@ -16,4 +14,5 @@ public class TestConfiguration {
   public IRule ribbonRule() {
     return new RandomRule();
   }
+  
 }
