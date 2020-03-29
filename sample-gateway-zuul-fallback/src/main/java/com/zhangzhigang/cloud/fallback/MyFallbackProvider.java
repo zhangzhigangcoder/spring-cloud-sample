@@ -25,17 +25,12 @@ public class MyFallbackProvider implements FallbackProvider {
     }
 
     @Override
-    public ClientHttpResponse fallbackResponse(final Throwable cause) {
+    public ClientHttpResponse fallbackResponse(String route, final Throwable cause) {
         if (cause instanceof HystrixTimeoutException) {
             return response(HttpStatus.GATEWAY_TIMEOUT);
         } else {
-            return fallbackResponse();
+            return response(HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }
-
-    @Override
-    public ClientHttpResponse fallbackResponse() {
-        return response(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     private ClientHttpResponse response(final HttpStatus status) {

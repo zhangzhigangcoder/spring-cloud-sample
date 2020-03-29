@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -9,13 +10,12 @@
 	<packaging>pom</packaging>
 
 	<modules>
+		<module>sample-discovery-eureka</module>
+		<module>sample-discovery-eureka-ha</module>
+		<module>sample-provider-user</module>
 		<module>sample-consumer-movie</module>
-		<module>sample-consumer-movie-feign</module>
-		<module>sample-consumer-movie-feign-with-hystrix</module>
-		<module>sample-consumer-movie-feign-customizing</module>
-		<module>sample-consumer-movie-feign-customizing-without-hystrix</module>
 		<module>sample-consumer-movie-ribbon</module>
-		<module>sample-consumer-movie-ribbon-config</module>
+		<module>sample-consumer-movie-ribbon-properties-customizing</module>
 		<module>sample-consumer-movie-ribbon-retry</module>
 		<module>sample-consumer-movie-ribbon-with-hystrix</module>
 		<module>sample-consumer-movie-ribbon-with-hystrix-retry</module>
@@ -23,19 +23,18 @@
 		<module>sample-consumer-movie-ribbon-with-hystrix3</module>
 		<module>sample-consumer-movie-ribbon-with-hystrix-propagation</module>
 		<module>sample-consumer-movie-ribbon-with-hystrix-factory</module>
-		<module>sample-consumer-movie-ribbon-properties-customizing</module>
 		<module>sample-consumer-movie-ribbon-without-eureka</module>
-		
-		<module>sample-provider-user</module>
-		<module>sample-discovery-eureka</module>
-		<module>sample-discovery-eureka-ha</module>
+		<module>sample-consumer-movie-feign</module>
+		<module>sample-consumer-movie-feign-with-hystrix</module>
+		<module>sample-consumer-movie-feign-customizing</module>
+		<module>sample-consumer-movie-feign-customizing-without-hystrix</module>
 		<module>sample-hystrix-dashboard</module>
 		<module>sample-gateway-zuul</module>
 		<module>sample-gateway-zuul-reg-exp</module>
 		<module>sample-gateway-zuul-fallback</module>
 		<module>sample-gateway-zuul-sidecar</module>
 		<module>sample-gateway-zuul-filter</module>
-		<module>sample-gateway-zuul-filter-github</module>  
+		<module>sample-gateway-zuul-filter-github</module>
 		<module>sample-config-server</module>
 		<module>sample-config-server-authc</module>
 		<module>sample-config-server-with-eureka</module>
@@ -50,21 +49,25 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<java.version>1.8</java.version>
+		<maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
 	</properties>
 
-	<parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>1.5.10.RELEASE</version>
-	</parent>
-	
 	<dependencyManagement>
 		<dependencies>
+
+			<dependency>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>2.2.6.RELEASE</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Edgware.SR3</version>
+				<version>Hoxton.SR3</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>

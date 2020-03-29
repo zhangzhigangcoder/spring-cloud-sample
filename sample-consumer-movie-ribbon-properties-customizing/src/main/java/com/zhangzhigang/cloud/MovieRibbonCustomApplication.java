@@ -34,10 +34,10 @@ import com.zhangzhigang.cloud.config.UserRibbonConfiguration;
  *
  */
 @SpringBootApplication
-//@RibbonClients(value = {
-//	@RibbonClient(name = "microservice-provider-user", configuration = UserRibbonConfiguration.class)
-//}, defaultConfiguration = UserDefaultRibbonConfiguration.class)
-@RibbonClient(name = "microservice-provider-user", configuration = UserDefaultRibbonConfiguration.class)
+@RibbonClients(value = {
+	@RibbonClient(name = "microservice-provider-user", configuration = UserRibbonConfiguration.class)
+}, defaultConfiguration = UserDefaultRibbonConfiguration.class)
+//@RibbonClient(name = "microservice-provider-user", configuration = UserDefaultRibbonConfiguration.class)
 //此处如果不排除在扫描路径之外，该配置会应用到所有的RibbonClient上，也可以通过不加@Configuration注解来排除
 //@ComponentScan(excludeFilters = { @ComponentScan.Filter(type = FilterType.ANNOTATION, value = ExcludeFromComponentScan.class) })
 public class MovieRibbonCustomApplication {

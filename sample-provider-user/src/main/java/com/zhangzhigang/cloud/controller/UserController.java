@@ -31,14 +31,14 @@ public class UserController {
   public User findById(@PathVariable Long id) {
 	  User u = new User();
 	  u.setId(id);
-    return this.userRepository.findOne(Example.of(u));
+    return this.userRepository.findOne(Example.of(u)).get();
   }
   
   @PostMapping("/simple/{id}")
   public User updateById(@PathVariable Long id) {
 	  User u = new User();
 	  u.setId(id);
-    return this.userRepository.findOne(Example.of(u));
+    return this.userRepository.findOne(Example.of(u)).get();
   }
 
   @GetMapping("/eureka-instance")
@@ -47,11 +47,11 @@ public class UserController {
     return instance.getHomePageUrl();
   }
 
-  @GetMapping("/instance-info")
-  public ServiceInstance showInfo() {
-    ServiceInstance localServiceInstance = this.discoveryClient.getLocalServiceInstance();
-    return localServiceInstance;
-  }
+//  @GetMapping("/instance-info")
+//  public ServiceInstance showInfo() {
+//    ServiceInstance localServiceInstance = this.discoveryClient.getLocalServiceInstance();
+//    return localServiceInstance;
+//  }
 //
   @PostMapping("/user")
   public User postUser(@RequestBody User user) {

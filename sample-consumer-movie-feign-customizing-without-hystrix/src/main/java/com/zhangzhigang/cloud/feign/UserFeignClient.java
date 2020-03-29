@@ -1,6 +1,6 @@
 package com.zhangzhigang.cloud.feign;
 
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 
 import com.zhangzhigang.cloud.entity.User;
 import com.zhangzhigang.config.Configuration1;
