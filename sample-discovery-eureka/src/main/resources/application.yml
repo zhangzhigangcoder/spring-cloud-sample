@@ -1,11 +1,14 @@
-security:
-  basic:
-    enabled: true
-  user:
-    name: zhang
-    password: 123
+spring: 
+  security:
+    basic:
+      enabled: true
+    user:
+      name: zhang
+      password: 123
+      
 server:
   port: 8761
+  
 eureka:
   client:
     register-with-eureka: false #eureka 单机模式

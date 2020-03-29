@@ -26,11 +26,10 @@ eureka:
        defaultZone: http://zhang:123@localhost:8761/eureka
        # Eureka server 高可用配置
        #defaultZone: http://zhang:123@peer1:8761/eureka,http://zhang:123@peer2:8761/eureka,http://zhang:123@peer3:8761/eureka
-      
   instance:
     prefer-ip-address: true #eureka server 控制台访问为ip地址
     #eureka server 控制台显示名称
-    instance-id: ${spring.application.name}:${spring.cloud.client.ipAddress}:${spring.application.instance_id:${server.port}} 
+    instance-id: ${spring.cloud.client.hostname}:${spring.application.name}:${spring.application.instance_id:${server.port}}
     metadata-map:
       zone: ABC      # eureka可以理解的元数据
       zhangzhigang: BBC  # 不会影响客户端行为
