@@ -1,10 +1,13 @@
 spring:
   application:
     name: microservice-consumer-movie
-    
+  cloud:
+    loadbalancer:
+      retry:
+        enabled: false
     
 server:
-  port: 7902
+  port: 7903
   
   
 eureka:

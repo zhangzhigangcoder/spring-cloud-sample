@@ -25,9 +25,10 @@
 		<module>sample-consumer-movie-ribbon-with-hystrix-factory</module>
 		<module>sample-consumer-movie-ribbon-without-eureka</module>
 		<module>sample-consumer-movie-feign</module>
-		<module>sample-consumer-movie-feign-with-hystrix</module>
 		<module>sample-consumer-movie-feign-customizing</module>
 		<module>sample-consumer-movie-feign-customizing-without-hystrix</module>
+		<module>sample-consumer-movie-feign-retry</module>
+		<module>sample-consumer-movie-feign-with-hystrix</module>
 		<module>sample-hystrix-dashboard</module>
 		<module>sample-gateway-zuul</module>
 		<module>sample-gateway-zuul-reg-exp</module>
