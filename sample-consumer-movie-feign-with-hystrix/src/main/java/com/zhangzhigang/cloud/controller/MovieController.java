@@ -11,12 +11,12 @@ import com.zhangzhigang.cloud.feign.UserFeignClient;
 @RestController
 public class MovieController {
 
-  @Autowired
-  private UserFeignClient userFeignClient;
+	@Autowired
+	private UserFeignClient userFeignClient;
 
-  @GetMapping("/movie/{id}")
-  public User findById(@PathVariable Long id) {
-    return this.userFeignClient.findById(id);
-  }
+	@GetMapping("/movie/{id}")
+	public User findById(@PathVariable Long id) {
+		return this.userFeignClient.findById(id);
+	}
 
 }
