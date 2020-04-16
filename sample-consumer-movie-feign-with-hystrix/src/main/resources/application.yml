@@ -14,6 +14,7 @@ eureka:
   instance:
     prefer-ip-address: true
 
+# 开启 hystrix功能
 feign:
   hystrix:
     enabled: true
@@ -26,5 +27,13 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 500000000
+            timeoutInMilliseconds: 3000  #设置hystrix请求超时时间，默认1s
+      
+# ribbon中可以访问,feign中不起作用(/actuator/hystrix.stream), 要额外配置 ??? 
+# 该配置会导致/actuator/info失效
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: hystrix.stream
             

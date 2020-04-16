@@ -37,6 +37,7 @@
 		<module>sample-gateway-zuul-sidecar</module>
 		<module>sample-gateway-zuul-filter</module>
 		<module>sample-gateway-zuul-filter-github</module>
+		<module>sample-gateway-spring-cloud</module>
 		<module>sample-config-server</module>
 		<module>sample-config-server-authc</module>
 		<module>sample-config-server-with-eureka</module>

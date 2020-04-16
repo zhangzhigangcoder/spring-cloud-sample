@@ -21,6 +21,13 @@ hystrix:
           thread:
             timeoutInMilliseconds: 5000
             
+# 开启hystrix.stream监听地址   /actuator/hystrix.stream, 貌似只适用于@HystrixCommand
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
+            
 ribbon:
   OkToRetryOnAllOperations: true # 是否对所有请求都进行重试(默认false，只能对get请求重试)
   # 重试次数 = MaxAutoRetries + MaxAutoRetriesNextServer (不算第一次请求)

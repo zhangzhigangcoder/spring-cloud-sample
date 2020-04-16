@@ -1,2 +1,9 @@
 server:
   port: 8030
+
+  
+  
+# 可以结合ribbon和feign使用
+# http://localhost:8030/hystrix
+# http://localhost:8011/actuator/hystrix.stream ribbon
+# http://localhost:7903/hystrix.stream feign

@@ -24,7 +24,14 @@ hystrix:
       execution:
         isolation:
           thread:
-            timeoutInMilliseconds: 500000000
+            timeoutInMilliseconds: 5000
+        
+# 开启hystrix.stream监听地址   /actuator/hystrix.stream, 貌似只适用于@HystrixCommand
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
             
             
             
