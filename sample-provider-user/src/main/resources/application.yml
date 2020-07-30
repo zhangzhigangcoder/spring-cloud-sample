@@ -23,9 +23,9 @@ logging:
 eureka:
   client:
     serviceUrl:
-#       defaultZone: http://zhang:123@localhost:8761/eureka
+       defaultZone: http://zhang:123@localhost:8761/eureka
        # Eureka server 高可用配置
-       defaultZone: http://zhang:123@peer1:8761/eureka,http://zhang:123@peer2:8762/eureka,http://zhang:123@peer3:8763/eureka
+#       defaultZone: http://zhang:123@peer1:8761/eureka,http://zhang:123@peer2:8762/eureka,http://zhang:123@peer3:8763/eureka
   instance:
     prefer-ip-address: true #eureka server 控制台访问为ip地址
     #eureka server 控制台显示名称

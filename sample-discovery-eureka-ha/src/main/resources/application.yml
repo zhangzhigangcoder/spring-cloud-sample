@@ -2,4 +2,4 @@ spring:
   application:
     name: EUREKA-HA
   profiles:
-    active: peer1
+    active: peer3

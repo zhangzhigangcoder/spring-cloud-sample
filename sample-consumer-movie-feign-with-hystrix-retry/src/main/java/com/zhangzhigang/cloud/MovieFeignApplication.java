@@ -13,3 +13,4 @@ public class MovieFeignApplication {
     SpringApplication.run(MovieFeignApplication.class, args);
   }
 }
+
