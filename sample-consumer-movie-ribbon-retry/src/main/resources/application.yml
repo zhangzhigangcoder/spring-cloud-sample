@@ -12,7 +12,7 @@ eureka:
   instance:
     prefer-ip-address: true
     
-# 服务级别配置，优先级大于下面全局配置
+# 服务级别配置，优先级大于下面全局配置(会覆盖全局配置)
 microservice-provider-user: 
   ribbon: 
     MaxAutoRetries: 3
