@@ -1,7 +1,6 @@
 package com.zhangzhigang.cloud.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.data.domain.Example;
 import org.springframework.web.bind.annotation.GetMapping;
