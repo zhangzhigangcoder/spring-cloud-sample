@@ -1,0 +1,18 @@
+server:
+  port: 8763
+  
+spring:
+  profiles: peer3
+  security:
+    basic:
+      enabled: true
+    user:
+      name: zhang
+      password: 123
+      
+eureka:
+  instance:
+    hostname: peer3
+  client:
+    serviceUrl:
+      defaultZone: http://zhang:123@peer1:8761/eureka/,http://zhang:123@peer2:8762/eureka/

@@ -1,8 +1,10 @@
 spring:
   application:
     name: microservice-consumer-movie-ribbon
+    
 server:
   port: 8010
+  
 eureka:
   client:
     healthcheck:

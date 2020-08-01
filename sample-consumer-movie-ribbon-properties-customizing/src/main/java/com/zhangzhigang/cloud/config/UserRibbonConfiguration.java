@@ -5,7 +5,7 @@ import org.springframework.context.annotation.Bean;
 import com.netflix.loadbalancer.IRule;
 import com.netflix.loadbalancer.RandomRule;
 
-@ExcludeFromComponentScan
+//@ExcludeFromComponentScan
 public class UserRibbonConfiguration {
   //  @Autowired
   //  IClientConfig config;

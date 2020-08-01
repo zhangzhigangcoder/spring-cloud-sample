@@ -12,6 +12,7 @@ import com.zhangzhigang.cloud.entity.User;
 
 @RestController
 public class MovieController {
+	
   @Autowired
   private RestTemplate restTemplate;
   

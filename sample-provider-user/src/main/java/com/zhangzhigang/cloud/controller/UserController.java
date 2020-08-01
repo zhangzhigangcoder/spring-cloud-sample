@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.netflix.appinfo.InstanceInfo;
+import com.netflix.discovery.DiscoveryManager;
 import com.netflix.discovery.EurekaClient;
 import com.zhangzhigang.cloud.entity.User;
 import com.zhangzhigang.cloud.repository.UserRepository;
@@ -80,4 +81,13 @@ public class UserController {
 //    return list;
 //  }
   
+  /**
+   * 或postman直接请求
+   * DELETE http://zhang:123@localhost:8761/eureka/apps/MICROSERVICE-PROVIDER-USER/localhost:microservice-provider-user:7903
+   */
+  @SuppressWarnings("deprecation")
+  @GetMapping("/offline")
+  public void offline() {
+	  DiscoveryManager.getInstance().shutdownComponent();
+  }
 }
